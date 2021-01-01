@@ -8,6 +8,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
 //router home
+app.get("/",(req,res)=>{
+    res.json({message:'hello'})
+})
 app.get("/customers", (req, res) => {
     
 });
@@ -44,7 +47,7 @@ app.get("/customers/:idCustomer/accounts/:idAccount/transfer", (req, res) => {
     
 })
 
-const PORT = process.env.PORT || 8080;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
