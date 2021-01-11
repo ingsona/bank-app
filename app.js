@@ -2,14 +2,16 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require("cors")
 const app = express();
+const ejs = require('ejs')
 
 app.use(cors);
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
+app.set('view engine','ejs');
 
 //router home
 app.get("/",(req,res)=>{
-    res.json({message:'hello'})
+    res.render('./views/home')
 })
 app.get("/customers", (req, res) => {
     
