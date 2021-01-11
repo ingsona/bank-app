@@ -11,7 +11,7 @@ app.set('view engine','ejs');
 
 //router home
 app.get("/",(req,res)=>{
-    res.render('./views/home')
+    res.render('./views/home.ejs')
 })
 app.get("/customers", (req, res) => {
     
